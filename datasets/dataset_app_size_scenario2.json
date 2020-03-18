@@ -1,0 +1,1101 @@
+{
+  "servers": [
+    {
+      "id": 0,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 99.9
+    },
+    {
+      "id": 1,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 99.9
+    },
+    {
+      "id": 2,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 99.9
+    },
+    {
+      "id": 3,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 99.9
+    },
+    {
+      "id": 4,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 99.9
+    },
+    {
+      "id": 5,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 99.9
+    },
+    {
+      "id": 6,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 99.9
+    },
+    {
+      "id": 7,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 99.9
+    },
+    {
+      "id": 8,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 99.9
+    },
+    {
+      "id": 9,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 99.9
+    },
+    {
+      "id": 10,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 11,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 12,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 13,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 14,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 15,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 16,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 17,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 18,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 19,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 20,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 21,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 22,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 23,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 24,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 25,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 26,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 27,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 28,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 29,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 95
+    },
+    {
+      "id": 30,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 31,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 32,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 33,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 34,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 35,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 36,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 37,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 38,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 39,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 40,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 41,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 42,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 43,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 44,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 45,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 46,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 47,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 48,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 49,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 50,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 51,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 52,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 53,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 54,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 55,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 56,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 57,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 58,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    },
+    {
+      "id": 59,
+      "cpu": 16,
+      "ram": 16,
+      "disk": 128,
+      "availability": 90
+    }
+  ],
+  "applications": [
+    {
+      "id": 0,
+      "microservices": [
+        {
+          "id": 0,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 1,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 2,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        }
+      ],
+      "sla": 80
+    },
+    {
+      "id": 1,
+      "microservices": [
+        {
+          "id": 15,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 16,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 17,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        }
+      ],
+      "sla": 85
+    },
+    {
+      "id": 2,
+      "microservices": [
+        {
+          "id": 9,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 10,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 11,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        }
+      ],
+      "sla": 80
+    },
+    {
+      "id": 3,
+      "microservices": [
+        {
+          "id": 21,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 22,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 23,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        }
+      ],
+      "sla": 85
+    },
+    {
+      "id": 4,
+      "microservices": [
+        {
+          "id": 6,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 7,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 8,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        }
+      ],
+      "sla": 80
+    },
+    {
+      "id": 5,
+      "microservices": [
+        {
+          "id": 18,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 19,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 20,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        }
+      ],
+      "sla": 85
+    },
+    {
+      "id": 6,
+      "microservices": [
+        {
+          "id": 27,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 28,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 29,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        }
+      ],
+      "sla": 90
+    },
+    {
+      "id": 7,
+      "microservices": [
+        {
+          "id": 24,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 25,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 26,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        }
+      ],
+      "sla": 90
+    },
+    {
+      "id": 8,
+      "microservices": [
+        {
+          "id": 3,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 4,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 5,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        }
+      ],
+      "sla": 80
+    },
+    {
+      "id": 9,
+      "microservices": [
+        {
+          "id": 36,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 37,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 38,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 39,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 40,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 41,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        }
+      ],
+      "sla": 80
+    },
+    {
+      "id": 10,
+      "microservices": [
+        {
+          "id": 54,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 55,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 56,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 57,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 58,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 59,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 60,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 61,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 62,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        }
+      ],
+      "sla": 80
+    },
+    {
+      "id": 11,
+      "microservices": [
+        {
+          "id": 30,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 31,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 32,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        }
+      ],
+      "sla": 90
+    },
+    {
+      "id": 12,
+      "microservices": [
+        {
+          "id": 72,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 73,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 74,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 75,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 76,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 77,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 78,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 79,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 80,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        }
+      ],
+      "sla": 90
+    },
+    {
+      "id": 13,
+      "microservices": [
+        {
+          "id": 63,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 64,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 65,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 66,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 67,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 68,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 69,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 70,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 71,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        }
+      ],
+      "sla": 85
+    },
+    {
+      "id": 14,
+      "microservices": [
+        {
+          "id": 42,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 43,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 44,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 45,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 46,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 47,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        }
+      ],
+      "sla": 85
+    },
+    {
+      "id": 15,
+      "microservices": [
+        {
+          "id": 12,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 13,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 14,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        }
+      ],
+      "sla": 85
+    },
+    {
+      "id": 16,
+      "microservices": [
+        {
+          "id": 48,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        },
+        {
+          "id": 49,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 50,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 51,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 52,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 53,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        }
+      ],
+      "sla": 90
+    },
+    {
+      "id": 17,
+      "microservices": [
+        {
+          "id": 33,
+          "type": "memory-bound",
+          "cpu": 4,
+          "ram": 4,
+          "disk": 32
+        },
+        {
+          "id": 34,
+          "type": "io-bound",
+          "cpu": 2,
+          "ram": 2,
+          "disk": 16
+        },
+        {
+          "id": 35,
+          "type": "cpu-bound",
+          "cpu": 1,
+          "ram": 1,
+          "disk": 8
+        }
+      ],
+      "sla": 90
+    }
+  ]
+}
