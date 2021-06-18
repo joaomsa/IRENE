@@ -34,6 +34,7 @@ def placement_policy(strategy)
 	return(best_fit()) if (strategy.downcase() == 'best-fit')
 	return(worst_fit()) if (strategy.downcase() == 'worst-fit')
 	return(int_ha()) if (strategy.downcase() == 'int_ha')
+	return(simul_annealing()) if (strategy.downcase() == 'simul-annealing')
 end
 
 def show_results(solution, placement, execution_time)

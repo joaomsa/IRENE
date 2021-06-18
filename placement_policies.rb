@@ -2,6 +2,7 @@ require('json')
 require_relative('components')
 require_relative('auxiliar_methods')
 require_relative('genetic_algorithm')
+require_relative('simul_annealing')
 
 VERBOSITY = 2
 SCENARIO = ARGV[1] # Example: insert 'scenario1' to use the 'datasets/dataset_scenario1.json' file
@@ -164,13 +165,56 @@ def irene()
 	return(population.chromosomes.last().genes)
 end
 
+# TODO: test out parameter combinations
+START_TEMP = 100
+COOL_RATE = 0.1
+def temperature(k) # Function that maps time passed to temperature
+	#Needs to converge to less than 0
+	return START_TEMP - (COOL_RATE * k)
+end
+
+def simul_annealing()
+	current = SimulAnnealing::State.new(nil)
+	current.calculate_energy()
+
+	for k in (0..)
+		temp = temperature(k)
+		if (temp <= 0)
+			break # return current
+		end
+		neigh = current.neighbor()
+		# TODO: ensure neighbor is unique
+		neigh.calculate_energy() # TODO: work out relationship between energy and temperature
+		delta = neigh.energy - current.energy
+
+		stats = "cur:#{current.energy} neigh:#{neigh.energy} delta:#{delta} temp:#{temp}"
+
+		if (delta < 0) # always accept better solutions
+			puts "good: #{stats}\n"
+			current = neigh
+			next
+		end
+
+		prob = Math.exp(-delta / temp)
+		stats = "#{stats} prob:#{prob}"
+
+		if prob > Random.rand() # maybe accept bad solution
+			puts "luck: #{stats}\n"
+			current = neigh
+		else
+			puts "skip: #{stats}\n"
+		end
+	end
+	return(current.config)
+end
+
 read_json_input("datasets/dataset_#{SCENARIO}.json")
 
 servers = Server.all()
 apps = Application.all()
 microservices = Microservice.all()
 solution = ARGV[0]
-# Valid options for ARGV[0]: 'irene', 'int_ha', 'best-fit', 'first-fit', 'worst-fit'
+# Valid options for ARGV[0]: 'irene', 'int_ha', 'best-fit', 'first-fit', 'worst-fit', 'simul-annealing'
 
 initial_time = Time.now()
 placement = placement_policy(solution)
