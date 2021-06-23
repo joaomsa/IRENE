@@ -1,4 +1,8 @@
+#!/usr/bin/env ruby
+
 require('json')
+require('csv')
+require('time')
 require_relative('components')
 require_relative('auxiliar_methods')
 require_relative('genetic_algorithm')
@@ -165,47 +169,95 @@ def irene()
 	return(population.chromosomes.last().genes)
 end
 
-# TODO: test out parameter combinations
-START_TEMP = 100
-COOL_RATE = 0.1
-def temperature(k) # Function that maps time passed to temperature
-	#Needs to converge to less than 0
-	return START_TEMP - (COOL_RATE * k)
+START_TEMP = 1e5
+TIME_STEP = 0.1 # Streches out or shortens the annealing duration (resulting in more iterations)
+TEMP_THRESHOLD = 1e-4 # Annealing stops once temp drops below this value
+VERY_FAST_DECAY = 0.303 # Used to control very fast cooling schedule's logarithimic decay constant
+VERY_FAST_QUENCH = 2.0 # Used to control very fast cooling schedule's quench constant
+# Once annealing passes a low energy threshold (where probability of
+# random jumps is much, much lower), if we're not making any more
+# improvements then we've likely reached a local minima and should stop
+RESTARTS = 10
+WRITE_CSV = false
+
+def temperature(k)
+	# Function that maps time passed to temperature
+	# Applies logarithmic decay to initial temperature (based on very fast paper)
+
+	# Tried boltzmann, and cauchy strategies but didn't yield better results
+	
+	# Continuous logarithimic compounding
+	k = k * TIME_STEP
+ 	return START_TEMP * Math.exp(-VERY_FAST_DECAY * (k ** (1.0/VERY_FAST_QUENCH)))
 end
 
 def simul_annealing()
-	current = SimulAnnealing::State.new(nil)
-	current.calculate_energy()
 
-	for k in (0..)
-		temp = temperature(k)
-		if (temp <= 0)
-			break # return current
-		end
-		neigh = current.neighbor()
-		# TODO: ensure neighbor is unique
-		neigh.calculate_energy() # TODO: work out relationship between energy and temperature
-		delta = neigh.energy - current.energy
+	best = nil
 
-		stats = "cur:#{current.energy} neigh:#{neigh.energy} delta:#{delta} temp:#{temp}"
-
-		if (delta < 0) # always accept better solutions
-			puts "good: #{stats}\n"
-			current = neigh
-			next
-		end
-
-		prob = Math.exp(-delta / temp)
-		stats = "#{stats} prob:#{prob}"
-
-		if prob > Random.rand() # maybe accept bad solution
-			puts "luck: #{stats}\n"
-			current = neigh
-		else
-			puts "skip: #{stats}\n"
-		end
+	if WRITE_CSV
+		csv_name = "exec-#{SCENARIO}-#{Time.now.to_i}-#{Random.rand(100)}.csv"
+		csv = CSV.open("#{__dir__}/results_simul_annealing/#{csv_name}", "wb", col_sep: "\t")
 	end
-	return(current.config)
+
+	for trial in (0..RESTARTS)
+		# NOTE: Actually starting from the previous trial's state
+		# results in less colisions/sla violations (at least for
+		# baseline)
+		#current = best # each restart starts from the best
+		current = SimulAnnealing::State.new(nil)
+		current.calculate_energy()
+
+		if (!best)
+			best = current
+		end
+
+		if WRITE_CSV then csv << ["trial", "k", "temp", "best", "cur", "delta", "prob"] end
+		for k in (0..)
+			temp = temperature(k)
+			if (temp <= TEMP_THRESHOLD)
+				break # return current
+			end
+			neigh = current.neighbor()
+			# TODO: ensure neighbor is unique
+			neigh.calculate_energy()
+			 # NOTE: Worked out relationship between energy and temperature:
+			 # probability function is sensitive to average delta E,
+			 # starting temperature was tuned to match the model's
+			 # average delta between moves: ~18
+			delta = neigh.energy - current.energy
+
+			stats = "trial: %i temp: %.5f best: %.4f cur: %.4f neigh: %.4f delta: %.4f" % [
+				trial, temp, best.energy, current.energy, neigh.energy, delta
+			]
+
+			if delta < 0 # always accept better solutions
+				current = neigh
+				if (current.energy < best.energy)
+					best = current
+				end
+
+				puts "good: #{stats}\n"
+				if WRITE_CSV then csv << [trial, k, temp, best.energy, current.energy, delta, 1.0, "good"] end
+				next
+			end
+
+			prob = Math.exp(-delta / temp)
+			if prob > Random.rand() # maybe accept bad solution
+				current = neigh
+
+				puts "luck: #{stats} prob: #{prob}\n"
+				if WRITE_CSV then csv << [trial, k, temp, best.energy, current.energy, delta, prob, "luck"] end
+			else
+				#puts "skip: #{stats}\n"
+			end
+		end
+		#
+		puts "TOTAL ITERATIONS: #{k}\n"
+	end
+
+	if WRITE_CSV then csv.close() end
+	return(best.config)
 end
 
 read_json_input("datasets/dataset_#{SCENARIO}.json")

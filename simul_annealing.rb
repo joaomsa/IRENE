@@ -88,16 +88,16 @@ module SimulAnnealing
 			end
 		end
 
-		sla_violation_energy = sla_violations.count().to_f / Application.count()
+ 		sla_violation_energy = sla_violations.count().to_f / Application.count()
+ 
+#		if (sla_violations.count() == 0)
+#			sla_violations_gravity = 0
+#		else
+#			sla_violations_gravity = (sla_violations.sum() / sla_violations.count())
+#		end
 
-		if (sla_violations.count() == 0)
-			sla_violations_gravity = 0
-		else
-			sla_violations_gravity = (sla_violations.sum() / sla_violations.count())
-		end
-
-		energy = (consolidation_energy + overloaded_energy + interference_energy)
-		energy = energy + (energy * overloaded_servers)
+		energy = (consolidation_energy + sla_violation_energy + interference_energy)
+		#energy = energy * (1 + overloaded_servers)
 		energy = energy * 1000
 
 		# Resetting placement

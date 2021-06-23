@@ -114,6 +114,7 @@ def show_results(solution, placement, execution_time)
 	#### Calculating Interference and Consolidation Rate ####
 	#########################################################
 	colliding_microservices = 0
+	overloaded_servers = 0
 	used_servers = 0
 	unused_servers = 0
 	Server.all().each do |server|
@@ -123,6 +124,9 @@ def show_results(solution, placement, execution_time)
 			unused_servers += 1
 		end
 		colliding_microservices += server.get_number_of_colliding_microservices()
+		if (server.free_cpu < 0 or server.free_ram < 0 or server.free_disk < 0)
+			overloaded_servers += 1
+		end
 	end
 
 	consolidation_rate = (unused_servers * 100.0) / Server.count()
@@ -144,6 +148,7 @@ def show_results(solution, placement, execution_time)
 	puts("SLA Violations: #{sla_violations} (#{average_sla_violation}\% in average)")
 	puts("Colliding Microservices: #{colliding_microservices}")
 	puts("Used Servers: #{used_servers}")
+	puts("Overloaded Servers: #{overloaded_servers}")
 	puts("Consolidation Rate: #{consolidation_rate.round(4)}")
 	puts("Execution Time: #{execution_time}")
 	puts("Score: #{score}")
