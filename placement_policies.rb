@@ -170,8 +170,8 @@ def irene()
 end
 
 START_TEMP = 1e5
-TIME_STEP = 0.1 # Streches out or shortens the annealing duration (resulting in more iterations)
-TEMP_THRESHOLD = 1e-4 # Annealing stops once temp drops below this value
+TIME_STEP = 0.5 # Streches out or shortens the annealing duration (resulting in more iterations)
+TEMP_THRESHOLD = 1e-5 # Annealing stops once temp drops below this value
 VERY_FAST_DECAY = 0.303 # Used to control very fast cooling schedule's logarithimic decay constant
 VERY_FAST_QUENCH = 2.0 # Used to control very fast cooling schedule's quench constant
 # Once annealing passes a low energy threshold (where probability of
@@ -194,6 +194,8 @@ end
 def simul_annealing()
 
 	best = nil
+	#best = SimulAnnealing::State.new(nil)
+	#best.calculate_energy()
 
 	if WRITE_CSV
 		csv_name = "exec-#{SCENARIO}-#{Time.now.to_i}-#{Random.rand(100)}.csv"
@@ -225,20 +227,20 @@ def simul_annealing()
 			 # probability function is sensitive to average delta E,
 			 # starting temperature was tuned to match the model's
 			 # average delta between moves: ~18
-			delta = neigh.energy - current.energy
+			delta = neigh.energy.delta(current.energy)
 
 			stats = "trial: %i temp: %.5f best: %.4f cur: %.4f neigh: %.4f delta: %.4f" % [
-				trial, temp, best.energy, current.energy, neigh.energy, delta
+				trial, temp, best.energy.total, current.energy.total, neigh.energy.total, delta
 			]
 
 			if delta < 0 # always accept better solutions
 				current = neigh
-				if (current.energy < best.energy)
+				if current.energy.delta(best.energy) < 0
 					best = current
 				end
 
-				puts "good: #{stats}\n"
-				if WRITE_CSV then csv << [trial, k, temp, best.energy, current.energy, delta, 1.0, "good"] end
+				#puts "good: #{stats}\n"
+				if WRITE_CSV then csv << [trial, k, temp, best.energy.total, current.energy.total, delta, 1.0, "good"] end
 				next
 			end
 
@@ -246,17 +248,21 @@ def simul_annealing()
 			if prob > Random.rand() # maybe accept bad solution
 				current = neigh
 
-				puts "luck: #{stats} prob: #{prob}\n"
-				if WRITE_CSV then csv << [trial, k, temp, best.energy, current.energy, delta, prob, "luck"] end
+				#puts "luck: #{stats} prob: #{prob}\n"
+				if WRITE_CSV then csv << [trial, k, temp, best.energy.total, current.energy.total, delta, prob, "luck"] end
 			else
 				#puts "skip: #{stats}\n"
 			end
 		end
-		#
-		puts "TOTAL ITERATIONS: #{k}\n"
+
+		puts "trial: %i best: %.4f (sla(c):%.4f, sla(g):%.4f, col:%.4f) k: %i\n" % [
+			trial, best.energy.total,
+			best.energy.sla_violation, best.energy.sla_gravity, best.energy.interference,
+			k]
 	end
 
 	if WRITE_CSV then csv.close() end
+
 	return(best.config)
 end
 

@@ -90,21 +90,75 @@ module SimulAnnealing
 
  		sla_violation_energy = sla_violations.count().to_f / Application.count()
  
-#		if (sla_violations.count() == 0)
-#			sla_violations_gravity = 0
-#		else
-#			sla_violations_gravity = (sla_violations.sum() / sla_violations.count())
-#		end
+		if (sla_violations.count() == 0)
+			sla_violations_gravity = 0
+		else
+			sla_violations_gravity = (sla_violations.sum() / sla_violations.count())
+		end
 
-		energy = (consolidation_energy + sla_violation_energy + interference_energy)
-		#energy = energy * (1 + overloaded_servers)
-		energy = energy * 1000
 
 		# Resetting placement
 		for i in 0...servers.size()
 			servers[i].reset_resources_demand()
 		end
 
-		return(energy)
+		 # Residue added to each energy to avoid division by 0 when
+		 # trying the WPM
+		residue = 1e-5
+		return Energy.new(
+			consolidation_energy + residue,
+			sla_violation_energy + residue,
+			sla_violations_gravity + residue,
+			interference_energy + residue,
+			overloaded_energy + residue)
 	end
+
+	class Energy
+		def initialize(consolidation, sla_violation, sla_gravity, interference, overloaded)
+			@consolidation = consolidation
+			@sla_violation = sla_violation
+			@sla_gravity = sla_gravity
+			@interference = interference
+			@overloaded = overloaded
+
+			@total = calculate_total()
+		end
+
+		def calculate_total()
+
+			total = (@consolidation + @sla_violation + @interference) \
+				* (1 + @overloaded) \
+				* 1000
+
+			return total
+		end
+
+		def delta(prev)
+			return @total - prev.total
+		end
+
+		def delta_wpm(prev) # Weighted product model (ABANDONED)
+			weight = 1.0 / 4
+			delta = (prev.consolidation / @consolidation) ** weight \
+				* (prev.sla_gravity / @sla_gravity) ** weight \
+				* (prev.sla_violation / @sla_violation) ** weight \
+				* (prev.interference / @interference) ** weight
+
+			# NOTE: try use int_ha as starting solution for
+			# annealing search finding valleys free of sla
+			# violations is really hard
+
+			# There are more states with 0 colisions than 0 SLA
+			# violations, so needed to boost
+			return delta
+		end
+
+		def better_wpm?(prev) # Weighted product model (ABANDONED)
+			d = delta(prev)
+			return d > 1
+		end
+
+		attr_accessor :consolidation, :sla_violation, :sla_gravity, :interference, :overloaded, :total
+	end
+
 end
